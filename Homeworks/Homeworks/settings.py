@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'homework_1_app',
+    'homework_2_app',
 ]
 
 MIDDLEWARE = [
@@ -150,6 +151,11 @@ LOGGING = {
             'filename': './log/homework_1_app.log',
             'formatter': 'verbose',
         },
+        'file_homework_2_app': {
+            'class': 'logging.FileHandler',
+            'filename': './log/homework_2_app.log',
+            'formatter': 'verbose',
+        },
     },
     'loggers': {
         'django': {
@@ -160,6 +166,13 @@ LOGGING = {
         'homework_1_app': {
             # 'handlers': ['console'],
             'handlers': ['console', 'file_homework_1_app'],
+            # 'handlers': ['file_homework_app'],
+            'level': 'INFO',
+            # 'propagate': True,
+        },
+        'homework_2_app': {
+            # 'handlers': ['console'],
+            'handlers': ['console', 'file_homework_2_app'],
             # 'handlers': ['file_homework_app'],
             'level': 'INFO',
             # 'propagate': True,
