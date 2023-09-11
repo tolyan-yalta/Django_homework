@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'homework_1_app',
     'homework_2_app',
+    'homework_3_app',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,9 @@ ROOT_URLCONF = 'Homeworks.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -156,6 +159,11 @@ LOGGING = {
             'filename': './log/homework_2_app.log',
             'formatter': 'verbose',
         },
+        'file_homework_3_app': {
+            'class': 'logging.FileHandler',
+            'filename': './log/homework_3_app.log',
+            'formatter': 'verbose',
+        },
     },
     'loggers': {
         'django': {
@@ -173,6 +181,13 @@ LOGGING = {
         'homework_2_app': {
             # 'handlers': ['console'],
             'handlers': ['console', 'file_homework_2_app'],
+            # 'handlers': ['file_homework_app'],
+            'level': 'INFO',
+            # 'propagate': True,
+        },
+        'homework_3_app': {
+            # 'handlers': ['console'],
+            'handlers': ['console', 'file_homework_3_app'],
             # 'handlers': ['file_homework_app'],
             'level': 'INFO',
             # 'propagate': True,
