@@ -18,6 +18,8 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     quantity = models.IntegerField()
     date_added = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to='media/', 
+                            default='pngtree-super-selling-product-tag-png-image_4477856.png')
 
     def __str__(self) -> str:
         return f"{self.name} {self.description} {self.price} {self.quantity} {self.date_added}"
