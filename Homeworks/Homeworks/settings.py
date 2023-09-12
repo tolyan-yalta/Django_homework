@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'homework_1_app',
     'homework_2_app',
     'homework_3_app',
+    'homework_4_app',
 ]
 
 MIDDLEWARE = [
@@ -121,6 +122,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -164,6 +167,11 @@ LOGGING = {
             'filename': './log/homework_3_app.log',
             'formatter': 'verbose',
         },
+        'file_homework_4_app': {
+            'class': 'logging.FileHandler',
+            'filename': './log/homework_4_app.log',
+            'formatter': 'verbose',
+        },
     },
     'loggers': {
         'django': {
@@ -174,21 +182,28 @@ LOGGING = {
         'homework_1_app': {
             # 'handlers': ['console'],
             'handlers': ['console', 'file_homework_1_app'],
-            # 'handlers': ['file_homework_app'],
+            # 'handlers': ['file_homework_1_app'],
             'level': 'INFO',
             # 'propagate': True,
         },
         'homework_2_app': {
             # 'handlers': ['console'],
             'handlers': ['console', 'file_homework_2_app'],
-            # 'handlers': ['file_homework_app'],
+            # 'handlers': ['file_homework_2_app'],
             'level': 'INFO',
             # 'propagate': True,
         },
         'homework_3_app': {
             # 'handlers': ['console'],
             'handlers': ['console', 'file_homework_3_app'],
-            # 'handlers': ['file_homework_app'],
+            # 'handlers': ['file_homework_3_app'],
+            'level': 'INFO',
+            # 'propagate': True,
+        },
+        'homework_4_app': {
+            # 'handlers': ['console'],
+            'handlers': ['console', 'file_homework_4_app'],
+            # 'handlers': ['file_homework_4_app'],
             'level': 'INFO',
             # 'propagate': True,
         },
